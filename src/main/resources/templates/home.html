@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Spring Boot + Keycloak</title>
+</head>
+<body>
+  <h1>Welcome to Spring Boot with Keycloak</hjson>
+  
+    <div th:if="${name}">
+      <p>Logado como: <span th:text="${name}"></span></p>
+      <p>Email: <span th:text="${email}"></span></p>
+      <a href="/logout">Logout</a>
+    </div>
+
+    <div th:unless="${name}">
+      <a href="/oauth2/authorization/keycloak">Login com Keycloak</a>
+    </div>
+</body>
+</html>
